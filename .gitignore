@@ -1,0 +1,6 @@
+.vscode
+secrets.h
+.env
+.build
+build
+*.o
