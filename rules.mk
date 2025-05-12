@@ -19,6 +19,8 @@ SENTENCE_CASE_ENABLE = yes
 # DEFERRED_EXEC_ENABLE: Allow functions to be executed after a delay
 DEFERRED_EXEC_ENABLE = yes
 
+AUTOCORRECT_ENABLE = yes
+
 # SMTD_ENABLE: Smart Tap Dance extension
 SMTD_ENABLE = yes
 
