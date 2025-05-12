@@ -58,10 +58,8 @@ enum custom_keycodes {
     CKC_E,                       /**< Home row mod for 'E' key */
     CKC_I,                       /**< Home row mod for 'I' key */
     CKC_O,                       /**< Home row mod for 'O' key */
+    CYC_S,                       /**< Cycle through variations of  */
     SMTD_KEYCODES_END,           /**< Marker for end of SMTD keycodes */
-    
-    // Cycling keycodes
-    CYC_S,                       /**< Cycle through variations of 'S' key (possibly for sending ß, etc.) */
     
     // Run command keycodes
     RUN_CMD_START,               /**< Marker for start of application launcher keycodes */
