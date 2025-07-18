@@ -8,7 +8,7 @@ A semi–modular, slightly neurotic QMK configuration for my custom mechanical k
 
 ## ✨ Features
 
-* **Home‑row Mods** via `sm_td`: tap‑dance your way through GUI/Alt/Shift/Ctrl without finger gymnastics.
+* **Home‑row Mods** tap‑dance your way through GUI/Alt/Shift/Ctrl without finger gymnastics.
 * **Sentence Case** auto‑capitalization for those who can’t be bothered to hold Shift.
 * **Secret‑macro fortress**: enter a PIN to unlock and spit out passwords or phrases on demand.
 * **Virtual Desktop Control**: switch or move windows across desktops with fancy key combos, all without installing software on your host machine.
@@ -23,7 +23,6 @@ A semi–modular, slightly neurotic QMK configuration for my custom mechanical k
 ├── custom_keycodes.h      # your secret sauce keycodes
 ├── features/              # all the broken-out logic
 │   ├── sentence_case.*    # auto-capitalization engine
-│   ├── sm_td.h            # flexible home-row mods
 │   ├── secrets_manager.*  # PIN & password macros
 │   ├── virtual_desktop.*  # desktop-switching code
 │   ├── rgb_indicators.*   # custom RGB rules

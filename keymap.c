@@ -11,7 +11,6 @@
 #include "features/sentence_case.h"
 #include "features/run_cmds.h"
 #include "features/secrets_manager.h"
-#include "features/sm_td.h" // HAS to be after keycodes/layers
 #include "features/virtual_desktop.h"
 #include "features/rgb_indicators.h"
 #include "features/process_meta_layer.h"
@@ -21,7 +20,6 @@
 *  parent modules will complain if they're defined elsewhere.
 */
 #include "features/sentence_case_press_impl.h" // Include the sentence case press implementation
-#include "features/on_smtd_action_impl.h" // Include the on_smtd_action implementation
 
 void matrix_scan_user(void) {
     secrets_timer_task();
@@ -30,7 +28,6 @@ void matrix_scan_user(void) {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   // Process the keycodes in the order of priority
   return process_record_sentence_case(keycode, record) &&
-         process_smtd(keycode, record) &&
          process_run_cmd(keycode, record) &&
          process_meta_layer(keycode, record) &&
          process_virtual_desktop(keycode, record) &&

@@ -30,16 +30,16 @@ char sentence_case_press_user(uint16_t keycode, keyrecord_t *record, uint8_t mod
     // First unwrap any home-row-mod keycodes into their plain letter equivalents
     // This allows home-row mods to work correctly with sentence case
     switch (keycode) {
-        case CKC_A: keycode = KC_A; break;
-        case CKC_R: keycode = KC_R; break;
-        case CKC_S: keycode = KC_S; break;
-        case CKC_T: keycode = KC_T; break;
-        case CKC_D: keycode = KC_D; break;
-        case CKC_H: keycode = KC_H; break;
-        case CKC_N: keycode = KC_N; break;
-        case CKC_E: keycode = KC_E; break;
-        case CKC_I: keycode = KC_I; break;
-        case CKC_O: keycode = KC_O; break;
+        case HOME_A: keycode = KC_A; break;
+        case HOME_R: keycode = KC_R; break;
+        case HOME_S: keycode = KC_S; break;
+        case HOME_T: keycode = KC_T; break;
+        case HOME_D: keycode = KC_D; break;
+        case HOME_H: keycode = KC_H; break;
+        case HOME_N: keycode = KC_N; break;
+        case HOME_E: keycode = KC_E; break;
+        case HOME_I: keycode = KC_I; break;
+        case HOME_O: keycode = KC_O; break;
         default:
             break;
     }

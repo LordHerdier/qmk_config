@@ -14,6 +14,7 @@
 #include "quantum.h"
 #include "layers.h"
 #include "features/secrets_manager.h"
+#include "config.h"
 
 #ifdef RGB_MATRIX_ENABLE
 /**
@@ -49,6 +50,24 @@ bool rgb_indicators_implementation(void) {
       RGB rgb_pin = hsv_to_rgb(hsv_pin);
       rgb_matrix_set_color(pin_idx, rgb_pin.r, rgb_pin.g, rgb_pin.b);
   }
+
+  // ------------- Autocorrect status indicator on TAB (idx 36) -------------
+//   {
+//       const uint8_t autocorrect_idx = 36; // Key index for the TAB key
+//       HSV hsv_autocorrect;
+      
+//       if (autocorrect_is_enabled()) {
+//           // Purple: Autocorrect is enabled
+//           hsv_autocorrect = (HSV){ .h = 220, .s = 255, .v = 255 };
+//       } else {
+//           // Off when autocorrect is disabled
+//           hsv_autocorrect = (HSV){ .h = 0, .s = 0, .v = 0 };
+//       }
+      
+//       // Convert HSV to RGB and set the LED color
+//       RGB rgb_autocorrect = hsv_to_rgb(hsv_autocorrect);
+//       rgb_matrix_set_color(autocorrect_idx, rgb_autocorrect.r, rgb_autocorrect.g, rgb_autocorrect.b);
+//   }
 
   // ------------- Layer state indicators -------------
   // Get the current active layer
