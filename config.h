@@ -1,19 +1,12 @@
 // --- config.h ---
 #pragma once
 
-#undef QUICK_TAP_TERM
 #undef TAPPING_TERM
-#undef SMTD_GLOBAL_RELEASE_TERM
-#undef SMTD_GLOBAL_TAP_TERM
 
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
-#define SMTD_GLOBAL_TAP_TERM 400
-#define TAPPING_TERM 400
-#define QUICK_TAP_TERM 120
-#define PERMISSIVE_HOLD
+
+#define TAPPING_TERM 200 // adjust this if you get accidental home row mod activations
 #define MANUFACTURER "Glorious"
 #define MAX_DEFERRED_EXECUTORS 10
-#define LEADER_TIMEOUT 700
-#define SMTD_GLOBAL_RELEASE_TERM 25
+// #define LEADER_TIMEOUT 700
 #define SECRETS_ENABLED YES
-// #define SMTD_DEBUG_ENABLED YES
