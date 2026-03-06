@@ -34,6 +34,9 @@
 // Alt+F4 keycode for killing applications
 #define KC_KILL LALT(KC_F4)
 
+// Lock keycode for locking the computer
+#define LOCK LGUI(KC_L)
+
 /**
  * @enum tap_dance_codes
  * @brief Enumeration of tap dance actions
@@ -69,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * - PIN_ENTRY: Activates secure PIN entry mode
    */
 [_BL] = LAYOUT(
-  KC_ESC,     KC_F1,    KC_F2,    KC_F3,   KC_F4,   KC_F5,  KC_F6,  KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_PSCR,  KC_DEL,   KC_INS,   KC_PGUP,  KC_PGDN,
+  KC_ESC,     KC_F1,    KC_F2,    KC_F3,   KC_F4,   KC_F5,  KC_F6,  KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   LOCK,     KC_DEL,   KC_INS,   KC_PGUP,  KC_PGDN,
   KC_GRV,     KC_1,     KC_2,     KC_3,    KC_4,    KC_5,   KC_6,   KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,  KC_EQL,   KC_BSPC,  KC_NUM,   KC_PSLS,  KC_PAST,  KC_PMNS,
   KC_TAB,     KC_Q,     KC_W,     KC_F,    KC_P,    KC_G,   KC_J,   KC_L,     KC_U,     KC_Y,     KC_SCLN,  KC_LBRC,  KC_RBRC,  KC_BSLS,  KC_P7,    KC_P8,    KC_P9,    KC_PPLS,
   C(KC_BSPC), HOME_A,    HOME_R,    HOME_S,   HOME_T,   HOME_D,  HOME_H,  HOME_N,    HOME_E,    HOME_I,    HOME_O,    KC_QUOT,  KC_ENT,             KC_P4,    KC_P5,    KC_P6,
@@ -108,10 +111,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * - PIN_ENTRY: Activates secure PIN entry mode
    */
 [_FL] = LAYOUT(
-  QK_BOOT,  KC_MYCM,  KC_WHOM,  KC_CALC,  KC_MSEL,  KC_MPRV,  KC_MRWD,  KC_MPLY,  KC_MSTP,  KC_MUTE,  KC_VOLD,  KC_VOLU,  _______,   _______,  _______,   _______,   _______, DT_PRNT,
+  QK_BOOT,  KC_MYCM,  KC_WHOM,  KC_CALC,  KC_MSEL,  KC_MPRV,  KC_MRWD,  KC_MPLY,  KC_MSTP,  KC_MUTE,  KC_VOLD,  KC_VOLU,  _______,   QK_LOCK,  _______,   _______,   _______, DT_PRNT,
   _______,  TO(_BL),  TO(_QW),  TO(_RG),  TG(_NM),  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______,   DT_UP,
-  AC_TOGG,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______,  DT_DOWN,
-  KC_CAPS,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,             E_PASS4,  _______,  _______,
+  AC_TOGG,  _______,  _______,  _______,  DM_PLY1,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______,  DT_DOWN,
+  KC_CAPS,  DM_REC1,  DM_RSTP,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,             E_PASS4,  E_PASS5,  _______,
   SENTENCE_CASE_TOGGLE,  RGB_HUI,  RGB_HUD,  RGB_SPD,  RGB_SPI,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  RGB_VAI,             E_PASS1,  E_PASS2,  E_PASS3,  _______,
   _______,  UC_WIN,   _______,                      _______,                                _______,  _______,  _______,  RGB_RMOD,   RGB_VAD,  _______,  PIN_ENTRY,  _______),
 
@@ -165,12 +168,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * - Cursor movement keys in both home row and arrow key positions
  */
 [_NAV] = LAYOUT(
-  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
-  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
-  KC_TRNS,  KC_TRNS,  SELECT_WORD,  KC_UP,  KC_TRNS, KC_TRNS,  KC_TRNS,  SELECT_LINE,  KC_UP,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
-  KC_TRNS,  KC_UP,    KC_LEFT,    KC_DOWN,  KC_RGHT, KC_TRNS,  KC_TRNS,  KC_LEFT,  KC_DOWN,  KC_RIGHT,    KC_UP,  KC_TRNS,  KC_TRNS,             KC_TRNS,  KC_TRNS,  KC_TRNS,
-  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS, SELECT_WORD_BACK,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
-  KC_TRNS,  KC_TRNS,  KC_TRNS,                     KC_TRNS,                                KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS),
+  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,          KC_TRNS,  KC_TRNS,  KC_TRNS,  MS_ACL2,
+  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,          KC_TRNS,  KC_TRNS,  KC_TRNS,  MS_ACL1,
+  KC_TRNS,  KC_TRNS,  SELECT_WORD,  KC_UP,  KC_TRNS, KC_TRNS,  KC_TRNS,  SELECT_LINE,  KC_UP,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,      MS_BTN1,  MS_UP,    MS_BTN2,  MS_ACL0,
+  KC_TRNS,  KC_UP,    KC_LEFT,    KC_DOWN,  KC_RGHT, KC_TRNS,  KC_TRNS,  KC_LEFT,  KC_DOWN,  KC_RIGHT,    KC_UP,  KC_TRNS,                            KC_TRNS,  MS_LEFT,  MS_DOWN,  MS_RGHT,
+  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS, SELECT_WORD_BACK,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,           MS_BTN3,  KC_TRNS,  KC_TRNS,
+  KC_TRNS,  KC_TRNS,  KC_TRNS,                     KC_TRNS,                                KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,       KC_TRNS,  KC_TRNS),
 
 /**
  * Meta Layer (_META)
@@ -192,7 +195,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_META] = LAYOUT(
   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
   KC_TRNS,  VD_1,     VD_2,     VD_3,     VD_4,    VD_5,     VD_6,     VD_7,     VD_8,     VD_9,     KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
-  KC_TRNS,  KC_KILL,  KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
+  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  RUN_WT,  KC_TRNS,  KC_TRNS,  KC_TRNS,  RUN_FILES,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,             KC_TRNS,  KC_TRNS,  KC_TRNS,
   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS, RUN_BROWSER,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
   KC_TRNS,  KC_TRNS,  KC_TRNS,                     KC_TRNS,                                KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS)

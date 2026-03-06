@@ -27,6 +27,15 @@ DEFERRED_EXEC_ENABLE = yes
 
 # AUTOCORRECT_ENABLE = yes
 
+# MOUSEKEY_ENABLE: Enable to allow keyboard to send mouse movements (See Nav Layer)
+MOUSEKEY_ENABLE = yes
+
+# DYNAMIC_MACRO_ENABLE: Enable macro recording feature
+DYNAMIC_MACRO_ENABLE = yes
+
+# KEY_LOCK_ENABLE: Enable to allow the QM_LOCK key to hold down another key
+KEY_LOCK_ENABLE = yes
+
 # TAP_DANCE_ENABLE: Configure keys to have different behavior depending on taps
 # I was was using this for some custom keys at one point, but I don't think I need it anymore
 # If you want to add tap dance functionality, you can enable this

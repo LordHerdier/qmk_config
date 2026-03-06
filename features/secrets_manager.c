@@ -227,7 +227,7 @@ bool process_pin_entry(uint16_t keycode, keyrecord_t *record) {
  */
 bool process_secret_keycodes(uint16_t keycode, keyrecord_t *record) {
     // Block secret macros if system is locked
-    if (keycode >= E_PIN && keycode <= E_PASS4 && !secrets_unlocked) {
+    if (keycode >= E_PIN && keycode <= E_PASS5 && !secrets_unlocked) {
         return false;  // Silently consume the key
     }
 

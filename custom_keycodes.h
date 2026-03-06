@@ -24,6 +24,7 @@ enum custom_keycodes {
     E_PASS2,                     /**< Keycode for password #2 */
     E_PASS3,                     /**< Keycode for password #3 */
     E_PASS4,                     /**< Keycode for password #4 */
+    E_PASS5,                     /**< Keycode for password #4 */ 
     E_SECRET_END,                /**< Marker for the end of secret keycodes */
 
     // Other custom keycodes
